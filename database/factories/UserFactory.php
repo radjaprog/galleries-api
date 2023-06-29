@@ -4,7 +4,6 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
-use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
 /**
@@ -20,8 +19,8 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'first_name' => fake()->name(),
-            'last_name' => fake()->name(),
+            'first_name' => fake()->firstName(),
+            'last_name' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => Hash::make('12345678'),
