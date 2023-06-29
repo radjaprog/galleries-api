@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Gallery;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +17,10 @@ class ImageFactory extends Factory
      */
     public function definition(): array
     {
+        $galleryIds = Gallery::pluck('id')->toArray();
         return [
-            //
+            'image_url'  => fake()->imageUrl($width = 640, $height = 320),
+            'gallery_id' => fake()->randomElement($galleryIds),
         ];
     }
 }

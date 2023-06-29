@@ -11,7 +11,7 @@ class CreateImageRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,7 @@ class CreateImageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'imageUrl' => 'required|string|url',
+            'image_url' => 'required|string|url',
         ];
     }
 }
