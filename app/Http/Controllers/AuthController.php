@@ -46,19 +46,6 @@ class AuthController extends Controller
             ]
         );
     }
-    public function refresh(Request $request)
-    {
-        return response()->json([
-            "status" => "success",
-            // "user" => auth()->user(),
-            "user" => Auth::user(),
-            "authorization" => [
-                // "token" => auth()->refresh()         
-                "token" => Auth::refresh()
-            ]
-        ]);
-    }
-
 
     public function logout(Request $request)
     {
