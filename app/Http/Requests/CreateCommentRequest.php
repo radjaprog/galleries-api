@@ -24,8 +24,6 @@ class CreateCommentRequest extends FormRequest
 
         return [
             'content' => 'required|min:10',
-            'user_id' => auth()->user()->id,
-            'gallery_id' => auth()->user()->gallery->id
         ];
     }
 }
