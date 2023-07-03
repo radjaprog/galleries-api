@@ -24,6 +24,8 @@ class CreateGalleryRequest extends FormRequest
         return [
             'name' => 'required|string|min:2',
             'content' => 'string|between:2,1000',
+            'images' => 'required|array',
+            'images.*.image_url' => 'required|url',
         ];
     }
 }
