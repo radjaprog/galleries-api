@@ -9,11 +9,24 @@ class Gallery extends Model
 {
     use HasFactory;
 
+    const PER_PAGE = 10;
+
+    protected $table = 'galleries';
+
     protected $fillable = [
         'name',
         'content',
         'user_id'
     ];
+
+    protected $with = [
+        'images'
+    ];
+
+    public function scopeUser($query, $userId)
+    {
+        return $query->where('user_id', $userId);
+    }
 
     public function user()
     {
