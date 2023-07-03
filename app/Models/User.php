@@ -46,6 +46,11 @@ class User extends Authenticatable implements JWTSubject
         'password' => 'hashed',
     ];
 
+    public function galleries()
+    {
+        return $this->hasMany(Gallery::class);
+    }
+
     public function comments()
     {
         return $this->hasMany(Comment::class);
