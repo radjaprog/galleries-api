@@ -25,7 +25,7 @@ class RegisterRequest extends FormRequest
             'first_name' => 'required|string|unique:users|max:255',
             'last_name' => 'required|string|unique:users|max:255',
             'email' => 'required|string|email',
-            'password' => ['required', 'string', 'min:8', 'regex:/^.*(?=.{1,})(?=.*[0-9]).*$/'],
+            'password' => ['required', 'confirmed', 'string', 'min:8', 'regex:/^.*(?=.{1,})(?=.*[0-9]).*$/'],
             'accepted_terms' => 'required|boolean'
         ];
     }
